@@ -1,0 +1,216 @@
+body {
+  font-family: system-ui;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.nav {
+  background: #ffffff;
+  box-shadow: -2px 0px 8px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0%;
+}
+.nav-pack {
+  display: flex;
+}
+.nav-pack h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 15px;
+  line-height: 21px;
+  text-align: center;
+}
+.rickimage {
+  margin: 20px;
+  max-width: 95%;
+  height: auto;
+}
+.nav-pack a {
+  color: #000000;
+  text-decoration: none;
+}
+.box-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.box {
+  background: #ffffff;
+  width: 240px;
+  height: 244px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12),
+    0px 2px 4px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+}
+
+.box-image img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 14/9;
+  height: 100%;
+  border-radius: 4px 4px 0 0;
+}
+.box-text {
+  padding: 10px;
+}
+.box-text-name {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  margin: 5px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.box-text-specie {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.25px;
+  margin: 5px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.input {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  outline: none;
+  margin: 15px 2px;
+}
+footer {
+  position: sticky;
+  top: 96%;
+  background: #ffffff;
+  box-shadow: -2px 0px 8px 2px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.locations-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.box-locations {
+  background: #fafafa;
+  width: 240px;
+  height: 128px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12),
+    0px 2px 4px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.box-locations:active {
+  box-shadow: 0 0 0 black;
+}
+.box-locations h1 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.box-locations span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.pagination {
+  margin-bottom: 50px;
+}
+.description-plantes-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.description-plantes-text h1 {
+  color: #081f32;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+}
+.desription-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.desription-box div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.description-top {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #081f32;
+}
+.description-bottom {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #6e798c;
+}
+
+.btn {
+  background: #f2f9fe;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12),
+    0px 6px 10px rgba(0, 0, 0, 0.14);
+  color: #2196f3;
+  border-radius: 4px;
+  border: 0;
+  margin: 10px 5px;
+  margin-top: 20px;
+  width: 150px;
+  height: 36px;
+}
+.btn:active {
+  box-shadow: 0 0 0 black;
+}
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-thumb {
+  height: 56px;
+  border-radius: 8px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+  background-color: #9090906b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6060606b;
+}
