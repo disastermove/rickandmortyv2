@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom';
-import LocationsResidents from './LocationsResidents'
-import { getLocations } from '../services/api';
+import { getEpisodes } from '../services/api';
 import Footer from '../components/Footer.jsx';
 import NavBar from '../components/NavBar.jsx';
-const LocationsDescription = () => {
-    const [location, setLocation] = useState([])
+import React, { useEffect, useState } from 'react'
+import EpisodesREsidents from './EpisodesREsidents';
+import { useParams, useNavigate } from 'react-router-dom';
+
+const EpisodesDescription = () => {
+    const [episodes, setEpisodes] = useState([])
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -14,7 +15,7 @@ const LocationsDescription = () => {
     }
 
     useEffect(() => {
-        getLocations(id).then(res => setLocation(res.data.results))
+        getEpisodes(id).then(res => setEpisodes(res.data.results))
     }, [])
 
     return (
@@ -23,9 +24,9 @@ const LocationsDescription = () => {
             <Footer />
             <div>
                 {
-                    location.map((item, i) => {
+                    episodes.map((item) => {
                         return (
-                            <div key={i}>
+                            <div>
                                 <div className='description-pack'>
                                     <button className='goback' onClick={pressed}>
                                         <span className="material-symbols-outlined">
@@ -40,20 +41,21 @@ const LocationsDescription = () => {
                                 </div>
                                 <div className='desription-box'>
                                     <div>
-                                        <span className='description-top'>Type</span>
-                                        <span className='description-bottom'>{item.type}</span>
+                                        <span className='description-top'>Episode</span>
+                                        <span className='description-bottom'>{item.episode}</span>
                                     </div>
                                     <div>
-                                        <span className='description-top'>Dimension</span>
-                                        <span className='description-bottom'>{item.dimension}</span>
+                                        <span className='description-top'>Date</span>
+                                        <span className='description-bottom'>{item.air_date}</span>
                                     </div>
                                 </div>
                                 <div className='container' style={{ alignItems: "flex-start" }}>
-                                    <h1 className='description-text'>Residents</h1>
+                                    <h1 className='description-text'>Cast</h1>
+
                                     <div className="box-container-locations" >
 
 
-                                        <LocationsResidents resident={item.residents} />
+                                        <EpisodesREsidents resident={item.characters} />
                                     </div>
                                 </div>
                             </div>
@@ -66,4 +68,4 @@ const LocationsDescription = () => {
     )
 }
 
-export default LocationsDescription
+export default EpisodesDescription

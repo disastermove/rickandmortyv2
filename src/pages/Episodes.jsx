@@ -3,19 +3,19 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Footer from '../components/Footer.jsx';
 import NavBar from '../components/NavBar.jsx';
-import { getLocationsAndPage } from '../services/api.jsx';
+import { getEpisodes } from '../services/api.jsx';
 
-const Locations = () => {
+const Episodes = () => {
     const [items, setItems] = useState([]);
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState("");
 
     useEffect(() => {
-        SearchLocations();
+        SearchEpisodes();
     }, []);
 
-    const SearchLocations = () => {
-        getLocationsAndPage(search).then((res) => {
+    const SearchEpisodes = () => {
+        getEpisodes(search).then((res) => {
             setItems(res.data.results);
         });
         if (search !== "") {
@@ -25,14 +25,14 @@ const Locations = () => {
 
     const Next = () => {
         setPage(page + 1);
-        getLocationsAndPage(search, page + 1).then((res) => {
+        getEpisodes(search, page + 1).then((res) => {
             setItems(res.data.results);
         });
     };
 
     const Prev = () => {
         setPage(page - 1);
-        getLocationsAndPage(search, page - 1).then((res) => {
+        getEpisodes(search, page - 1).then((res) => {
             setItems(res.data.results);
         });
     };
@@ -42,7 +42,7 @@ const Locations = () => {
             <NavBar />
             <Footer />
             <div className='container'>
-                <img className="rickimage" src="/portal.webp" alt="portal" />
+                <img className="rickimage" src="/open.webp" alt="open" />
                 <input
                     className="input"
                     type="text"
@@ -52,20 +52,21 @@ const Locations = () => {
                     }}
                     onKeyDown={(e) => {
                         if (e.key === "Enter") {
-                            SearchLocations();
+                            SearchEpisodes();
                         }
                     }}
                 />
                 <div className='box-container'>
                     {
                         items.map((item, i) => (
-                            <Link key={i} className='box-locations' to={`/locations/${item.name}`}>
+                            <Link key={i} className='box-episodes' to={`/episodes/${item.name}`}>
                                 <h1>
                                     {item.name}
                                 </h1>
                                 <span>
-                                    {item.type}
+                                    {item.air_date}
                                 </span>
+                                <p>{item.episode}</p>
                             </Link>
                         ))
                     }
@@ -79,4 +80,4 @@ const Locations = () => {
     )
 }
 
-export default Locations
+export default Episodes

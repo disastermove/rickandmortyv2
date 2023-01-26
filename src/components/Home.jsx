@@ -57,7 +57,7 @@ const Home = () => {
                 />
                 <div className="box-container">
                     {items.map((item, i) => (
-                        <Box key={i} item={item}></Box>
+                        <Box key={i} item={item} />
                     ))}
                 </div>
                 <div className="pagination">

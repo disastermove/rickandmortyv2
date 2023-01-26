@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { getCharacterWithoutLink } from "../services/api";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { getEpisodeCastWithoutLink } from '../services/api';
 
-const LocationsResidents = ({ resident }) => {
+const EpisodesREsidents = ({ resident }) => {
     const [characters, setCharacters] = useState([]);
 
     useEffect(() => {
-        getCharacterWithoutLink(resident).then((res) => {
+        getEpisodeCastWithoutLink(resident).then((res) => {
             setCharacters(res);
         });
     }, []);
+
+
 
     return (
         <>
@@ -34,7 +36,8 @@ const LocationsResidents = ({ resident }) => {
             })}
 
         </>
-    );
-};
+    )
+}
 
-export default LocationsResidents;
+export default EpisodesREsidents
+
