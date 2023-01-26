@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import LocationsResidents from './LocationsResidents'
 import { getLocations } from '../services/api';
 import Footer from '../components/Footer.jsx';
@@ -9,6 +9,11 @@ const LocationsDescription = () => {
     const [residents, setResidents] = useState([])
     // const
     const { id } = useParams();
+    const navigate = useNavigate();
+
+    const pulsado = () => {
+        navigate('/locations');
+    }
 
     useEffect(() => {
         getLocations(id).then(res => setLocation(res.data.results))
@@ -20,9 +25,16 @@ const LocationsDescription = () => {
             {/* <Footer /> */}
             <div style={{ margin: 20 }}>
                 {
-                    location.map((item) => {
+                    location.map((item, i) => {
                         return (
-                            <div>
+                            <div key={i}>
+
+                                <button className='goback' onClick={pulsado}>
+                                    <span className="material-symbols-outlined">
+                                        arrow_back
+                                    </span>
+                                    <p>GO BACK</p>
+                                </button>
                                 <div className='description-plantes-text'>
                                     <h1 >{item.name}</h1>
                                 </div>
@@ -43,7 +55,7 @@ const LocationsDescription = () => {
                 }
             </div>
 
-        </div>
+        </div >
     )
 }
 

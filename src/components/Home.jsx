@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { getCharacter, getCharacterAndPage } from "../services/api.jsx";
 import Box from "./Box";
 import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
+import { useEffect, useState } from "react";
+import { getCharacter, getCharacterAndPage } from "../services/api.jsx";
 
 const Home = () => {
-    const [items, setItems] = useState([]);
     const [page, setPage] = useState(1);
+    const [items, setItems] = useState([]);
     const [search, setSearch] = useState("");
 
     useEffect(() => {
@@ -56,8 +56,8 @@ const Home = () => {
                     }}
                 />
                 <div className="box-container">
-                    {items.map((item) => (
-                        <Box item={item}></Box>
+                    {items.map((item, i) => (
+                        <Box key={i} item={item}></Box>
                     ))}
                 </div>
                 <div className="pagination">

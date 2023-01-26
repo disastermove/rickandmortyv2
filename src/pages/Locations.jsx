@@ -61,7 +61,7 @@ const Locations = () => {
                 <div className='box-container'>
                     {
                         items.map((item, i) => (
-                            <Link className='box-locations' id={item} to={`/locations/${item.name}`}>
+                            <Link key={i} className='box-locations' id={item} to={`/locations/${item.name}`}>
                                 <h1>
                                     {item.name}
                                 </h1>
