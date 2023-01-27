@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../components/Footer.jsx';
 import NavBar from '../components/NavBar.jsx';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import EpisodesREsidents from './EpisodesREsidents';
+import EpisodesREsidents from './EpisodesResidents';
 import { getCharacter, getCharacterNumber, getEpisodeWithoutLink } from '../services/api';
 
 const CharacterDetails = () => {
