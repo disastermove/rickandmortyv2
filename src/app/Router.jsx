@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LocationsDescription from '../pages/LocationsDescription';
 import EpisodesDescription from '../pages/EpisodesDescription';
 import CharacterDetails from '../pages/CharacterDetails';
+import NotFound from '../components/404';
 
 const Router = () => (
     <BrowserRouter>
@@ -16,7 +17,7 @@ const Router = () => (
             <Route path="/characters/:id" element={<CharacterDetails />} />
             <Route path="/episodes/:id" element={<EpisodesDescription />} />
             <Route path="/locations/:id" element={<LocationsDescription />} />
-            <Route path="*" element={<div>404</div>} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     </BrowserRouter>
 );
