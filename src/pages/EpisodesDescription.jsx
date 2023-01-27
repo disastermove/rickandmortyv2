@@ -2,7 +2,7 @@ import { getEpisodes } from '../services/api';
 import Footer from '../components/Footer.jsx';
 import NavBar from '../components/NavBar.jsx';
 import React, { useEffect, useState } from 'react'
-import EpisodesREsidents from './EpisodesREsidents';
+import EpisodesREsidents from './EpisodesResidents';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const EpisodesDescription = () => {
