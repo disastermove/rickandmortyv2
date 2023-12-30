@@ -4,7 +4,9 @@ const NavBar = () => {
     return (
         <>
             <header>
-                <img className='logo' src="/logo.webp" alt="logo" width={46} height={46} />
+                <Link to="index">
+                    <img className='logo' src="/logo.webp" alt="logo" width={46} height={46} />
+                </Link>
                 <input type="checkbox" id="nav-toggle" className="nav-toggle" />
                 <nav>
                     <ul>
